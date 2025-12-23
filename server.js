@@ -12,10 +12,26 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+// Serve static files from the `assets` folder explicitly and from project root
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(express.static(__dirname));
 
-// Database file path
-const DB_FILE = path.join(__dirname, 'biryani_orders.db');
+// Log presence of important static assets at startup (helps debugging on hosts like Render)
+try {
+    const sampleImage = path.join(__dirname, 'assets', 'img', 'biriyani.jpg');
+    console.log('Static check - sample image path:', sampleImage, 'exists=', fs.existsSync(sampleImage));
+    const assetsDir = path.join(__dirname, 'assets', 'img');
+    if (fs.existsSync(assetsDir)) {
+        console.log('Static check - assets/img contents:', fs.readdirSync(assetsDir));
+    } else {
+        console.log('Static check - assets/img directory missing');
+    }
+} catch (e) {
+    console.error('Static check error:', e && e.message);
+}
+
+// Database file path (allow overriding via env var for hosting persistent disk)
+const DB_FILE = process.env.DB_PATH || path.join(__dirname, 'biryani_orders.db');
 
 let db;
 
