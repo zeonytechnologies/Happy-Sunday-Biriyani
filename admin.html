@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Namma Krishnagiri Chicken Biryani</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'biryani-maroon': '#4A1515',
+                        'biryani-red': '#6B1D1D',
+                        'biryani-dark': '#2B0A0A',
+                        'biryani-orange': '#FF8C42',
+                        'biryani-yellow': '#FFD447',
+                        'biryani-cream': '#FFF8E7',
+                        'biryani-gold': '#F4A261',
+                        'biryani-green': '#2D5016',
+                    },
+                    fontFamily: {
+                        'funky': ['Fredoka', 'Poppins', 'sans-serif'],
+                        'heading': ['Berkshire Swash', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Berkshire Swash + Fredoka + Poppins + Luckiest Guy -->
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Fredoka:wght@400;700&family=Poppins:wght@400;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+      .font-funky { font-family: 'Luckiest Guy', cursive; letter-spacing: 1px; }
+    </style>
+
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-biryani-dark text-biryani-cream">
+
+    <!-- Login Screen (Shown by default) -->
+    <div id="loginScreen" class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-biryani-maroon via-biryani-red to-biryani-dark">
+        <div class="max-w-md w-full bg-biryani-dark/80 backdrop-blur-md rounded-3xl p-8 border-4 border-biryani-orange shadow-2xl">
+            <div class="text-center mb-8">
+                <div class="text-6xl mb-4">🔐</div>
+                <h1 class="text-4xl font-heading text-biryani-yellow mb-2">Admin Login</h1>
+                <p class="text-biryani-cream/70">Sunday Biryani Management</p>
+            </div>
+
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label class="block text-biryani-cream font-semibold mb-2">
+                        <i class="fas fa-user mr-2 text-biryani-orange"></i>
+                        Username
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username"
+                        class="w-full px-4 py-3 rounded-xl bg-biryani-maroon/50 border-2 border-biryani-orange/30 text-biryani-cream focus:border-biryani-orange focus:outline-none transition"
+                        placeholder="Enter username"
+                    >
+                </div>
+
+                <div>
+                    <label class="block text-biryani-cream font-semibold mb-2">
+                        <i class="fas fa-lock mr-2 text-biryani-orange"></i>
+                        Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password"
+                        class="w-full px-4 py-3 rounded-xl bg-biryani-maroon/50 border-2 border-biryani-orange/30 text-biryani-cream focus:border-biryani-orange focus:outline-none transition"
+                        placeholder="Enter password"
+                    >
+                </div>
+
+                <button 
+                    type="submit"
+                    class="w-full funky-btn bg-biryani-orange hover:bg-biryani-yellow text-biryani-dark px-6 py-4 rounded-2xl font-bold text-lg shadow-glow-orange"
+                >
+                    <i class="fas fa-sign-in-alt mr-2"></i>
+                    Login
+                </button>
+            </form>
+
+            <div class="mt-6 text-center">
+                <p class="text-sm text-biryani-cream/60">
+                    Demo: username="admin", password="admin123"
+                </p>
+                <a href="index.html" class="text-biryani-orange hover:text-biryani-yellow transition text-sm mt-2 inline-block">
+                    <i class="fas fa-arrow-left mr-1"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard (Hidden by default) -->
+    <div id="adminDashboard" class="hidden min-h-screen bg-biryani-dark">
+        
+        <!-- Top Bar -->
+        <nav class="bg-biryani-maroon border-b-4 border-biryani-orange">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <a href="index.html" class="flex items-center space-x-3 hover:opacity-90 transition">
+                        <img src="assets/img/logo.png" alt="Happy Sunday Biryani Logo" class="h-16 w-16 object-contain">
+                        <div>
+                            <h1 class="text-2xl font-heading text-biryani-yellow">Admin Panel</h1>
+                            <p class="text-xs text-biryani-orange uppercase">Order Management</p>
+                        </div>
+                    </a>
+
+                    <div class="flex items-center gap-4">
+                        <span class="text-biryani-cream/80 hidden sm:block">
+                            <i class="fas fa-user-circle mr-2"></i>
+                            Admin
+                        </span>
+                        <button onclick="logout()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl font-semibold transition">
+                            <i class="fas fa-sign-out-alt mr-2"></i>
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Dashboard Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            
+            <!-- Stats Cards -->
+            <div class="grid md:grid-cols-4 gap-6 mb-8">
+                <!-- Total Orders -->
+                <div class="bg-gradient-to-br from-blue-500/20 to-blue-600/20 backdrop-blur-md rounded-2xl p-6 border-2 border-blue-500/30 shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-biryani-cream/70 text-sm">Total Orders</p>
+                            <p id="totalOrders" class="text-4xl font-bold text-blue-400">0</p>
+                        </div>
+                        <div class="text-4xl">📦</div>
+                    </div>
+                </div>
+
+                <!-- New Orders -->
+                <div class="bg-gradient-to-br from-purple-500/20 to-purple-600/20 backdrop-blur-md rounded-2xl p-6 border-2 border-purple-500/30 shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-biryani-cream/70 text-sm">New Orders</p>
+                            <p id="newOrders" class="text-4xl font-bold text-purple-400">0</p>
+                        </div>
+                        <div class="text-4xl">🆕</div>
+                    </div>
+                </div>
+
+                <!-- Preparing -->
+                <div class="bg-gradient-to-br from-orange-500/20 to-orange-600/20 backdrop-blur-md rounded-2xl p-6 border-2 border-orange-500/30 shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-biryani-cream/70 text-sm">Preparing</p>
+                            <p id="preparingOrders" class="text-4xl font-bold text-orange-400">0</p>
+                        </div>
+                        <div class="text-4xl">👨‍🍳</div>
+                    </div>
+                </div>
+
+                <!-- Delivered -->
+                <div class="bg-gradient-to-br from-green-500/20 to-green-600/20 backdrop-blur-md rounded-2xl p-6 border-2 border-green-500/30 shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-biryani-cream/70 text-sm">Delivered</p>
+                            <p id="deliveredOrders" class="text-4xl font-bold text-green-400">0</p>
+                        </div>
+                        <div class="text-4xl">✅</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="bg-biryani-red/30 backdrop-blur-md rounded-2xl p-6 border-2 border-biryani-orange/30 mb-8">
+                <div class="flex flex-wrap gap-4 items-center">
+                    <h3 class="font-bold text-biryani-yellow mr-4">Filter by Status:</h3>
+                    <button onclick="filterOrders('all')" class="filter-btn active px-6 py-2 rounded-xl bg-biryani-orange text-biryani-dark font-semibold transition hover:bg-biryani-yellow">
+                        All
+                    </button>
+                    <button onclick="filterOrders('new')" class="filter-btn px-6 py-2 rounded-xl bg-biryani-dark/50 border-2 border-purple-500/50 text-purple-400 font-semibold transition hover:bg-purple-500/20">
+                        New
+                    </button>
+                    <button onclick="filterOrders('preparing')" class="filter-btn px-6 py-2 rounded-xl bg-biryani-dark/50 border-2 border-orange-500/50 text-orange-400 font-semibold transition hover:bg-orange-500/20">
+                        Preparing
+                    </button>
+                    <button onclick="filterOrders('delivering')" class="filter-btn px-6 py-2 rounded-xl bg-biryani-dark/50 border-2 border-blue-500/50 text-blue-400 font-semibold transition hover:bg-blue-500/20">
+                        Out for Delivery
+                    </button>
+                    <button onclick="filterOrders('delivered')" class="filter-btn px-6 py-2 rounded-xl bg-biryani-dark/50 border-2 border-green-500/50 text-green-400 font-semibold transition hover:bg-green-500/20">
+                        Delivered
+                    </button>
+                </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="bg-biryani-red/30 backdrop-blur-md rounded-2xl border-2 border-biryani-orange/30 overflow-hidden shadow-2xl">
+                <div class="p-6 border-b-2 border-biryani-orange/30">
+                    <h2 class="text-2xl font-bold text-biryani-yellow">Order Management</h2>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-biryani-maroon/50">
+                            <tr class="text-left">
+                                <th class="px-6 py-4 text-biryani-yellow font-bold">Order ID</th>
+                                <th class="px-6 py-4 text-biryani-yellow font-bold">Customer</th>
+                                <th class="px-6 py-4 text-biryani-yellow font-bold">Mobile</th>
+                                <th class="px-6 py-4 text-biryani-yellow font-bold">Item</th>
+                                <th class="px-6 py-4 text-biryani-yellow font-bold">Qty</th>
+                                <th class="px-6 py-4 text-biryani-yellow font-bold">Total</th>
+                                <th class="px-6 py-4 text-biryani-yellow font-bold">Status</th>
+                                <th class="px-6 py-4 text-biryani-yellow font-bold">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody" class="divide-y divide-biryani-orange/20">
+                            <!-- Orders will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="noOrders" class="p-12 text-center hidden">
+                    <div class="text-6xl mb-4 opacity-50">📦</div>
+                    <p class="text-xl text-biryani-cream/60">No orders yet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div id="orderModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-biryani-maroon rounded-3xl p-8 max-w-2xl w-full border-4 border-biryani-orange shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-biryani-yellow">Order Details</h2>
+                <button onclick="closeOrderModal()" class="text-biryani-cream hover:text-biryani-orange text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div id="orderDetailsContent" class="space-y-4">
+                <!-- Order details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>

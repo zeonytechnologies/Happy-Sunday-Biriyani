@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Namma Krishnagiri Chicken Biryani</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'biryani-maroon': '#4A1515',
+                        'biryani-red': '#6B1D1D',
+                        'biryani-dark': '#2B0A0A',
+                        'biryani-orange': '#FF8C42',
+                        'biryani-yellow': '#FFD447',
+                        'biryani-cream': '#FFF8E7',
+                        'biryani-gold': '#F4A261',
+                        'biryani-green': '#2D5016',
+                    },
+                    fontFamily: {
+                        'funky': ['Fredoka', 'Poppins', 'sans-serif'],
+                        'heading': ['Berkshire Swash', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Berkshire Swash + Fredoka + Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Fredoka:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+      .font-funky { font-family: 'Luckiest Guy', cursive; letter-spacing: 1px; }
+    </style>
+</head>
+<body class="bg-biryani-dark text-biryani-cream page-fade-in">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-biryani-maroon/95 backdrop-blur-md shadow-lg border-b-4 border-biryani-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3 hover:opacity-90 transition">
+                    <img src="assets/img/logo.png" alt="Happy Sunday Biryani Logo" class="h-16 w-16 object-contain animate-bounce-slow">
+                    <div>
+                        <h1 class="text-2xl font-heading text-biryani-yellow">Happy Sunday</h1>
+                        <p class="text-xs text-biryani-orange uppercase tracking-wider">Biryani</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-biryani-cream hover:text-biryani-yellow transition font-semibold">Home</a>
+                    <a href="about.html" class="text-biryani-cream hover:text-biryani-yellow transition font-semibold">About</a>
+                    <a href="menu.html" class="text-biryani-cream hover:text-biryani-yellow transition font-semibold border-b-2 border-biryani-yellow">Menu</a>
+                    <a href="speciality.html" class="text-biryani-cream hover:text-biryani-yellow transition font-semibold">Speciality</a>
+                    <a href="contact.html" class="text-biryani-cream hover:text-biryani-yellow transition font-semibold">Contact</a>
+                    <a href="order.html" class="bg-biryani-orange hover:bg-biryani-yellow text-biryani-dark px-6 py-2 rounded-full font-bold transition transform hover:scale-105 shadow-glow-orange">
+                        Order Now
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-biryani-cream text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden pb-4 mobile-menu">
+                <a href="index.html" class="block py-2 text-biryani-cream hover:text-biryani-yellow">Home</a>
+                <a href="about.html" class="block py-2 text-biryani-cream hover:text-biryani-yellow">About</a>
+                <a href="menu.html" class="block py-2 text-biryani-yellow font-semibold">Menu</a>
+                <a href="speciality.html" class="block py-2 text-biryani-cream hover:text-biryani-yellow">Speciality</a>
+                <a href="contact.html" class="block py-2 text-biryani-cream hover:text-biryani-yellow">Contact</a>
+                <a href="order.html" class="block mt-2 bg-biryani-orange text-biryani-dark px-6 py-2 rounded-full font-bold text-center">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-12 bg-gradient-to-br from-biryani-maroon via-biryani-red to-biryani-dark relative overflow-hidden">
+        <div class="absolute top-20 left-10 text-8xl opacity-10 animate-float">🍗</div>
+        <div class="absolute bottom-10 right-10 text-8xl opacity-10 animate-float" style="animation-delay: 1s;">🌶️</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-heading text-biryani-yellow mb-4">Our Menu</h1>
+            <p class="text-xl text-biryani-orange font-semibold">Delicious, Authentic & Flavorful 🔥</p>
+        </div>
+    </section>
+
+    <!-- Main Biryani Section -->
+    <section class="py-20 bg-biryani-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-biryani-yellow mb-4">
+                    🍛 Our Signature Biryani
+                </h2>
+                <p class="text-lg text-biryani-cream/80">
+                    Made with love, served with pride
+                </p>
+            </div>
+
+            <!-- Main Biryani Card -->
+            <div class="max-w-5xl mx-auto mb-20">
+                <div class="card-lift bg-gradient-to-br from-biryani-red/80 to-biryani-maroon/80 backdrop-blur-md rounded-3xl overflow-hidden border-4 border-biryani-orange shadow-2xl">
+                    <div class="grid md:grid-cols-2 gap-0">
+                        
+                        <!-- Image Side -->
+                        <div class="relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-biryani-orange/20 to-transparent z-10"></div>
+                            <div class="h-full bg-gradient-to-br from-biryani-orange to-biryani-red flex items-center justify-center text-9xl p-12">
+                                <img src="assets/img/biriyani.jpg" alt="Krishnagiri Chicken Biryani" class="object-cover w-full h-full rounded-l-3xl shadow-lg transform hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <!-- Steam effects -->
+                            <div class="absolute top-10 left-1/3 z-20">
+                                <div class="steam"></div>
+                                <div class="steam"></div>
+                                <div class="steam"></div>
+                            </div>
+                        </div>
+
+                        <!-- Content Side -->
+                        <div class="p-8 md:p-12">
+                            <div class="mb-4">
+                                <span class="bg-biryani-yellow text-biryani-dark px-4 py-1 rounded-full text-sm font-bold uppercase">
+                                    Best Seller 🔥
+                                </span>
+                            </div>
+                            
+                            <h3 class="text-4xl font-bold text-biryani-yellow mb-4">
+                                Krishnagiri Chicken Biryani
+                            </h3>
+                            
+                            <p class="text-biryani-cream/90 mb-6 text-lg leading-relaxed">
+                                Our signature dish! Tender chicken pieces marinated in authentic spices, layered with fragrant basmati rice, and slow-cooked using the traditional dum method. Each bite is an explosion of flavors!
+                            </p>
+
+                            <!-- Features -->
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center gap-3 text-biryani-cream/80">
+                                    <i class="fas fa-check-circle text-green-400"></i>
+                                    <span>Authentic Krishnagiri-style preparation</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-biryani-cream/80">
+                                    <i class="fas fa-check-circle text-green-400"></i>
+                                    <span>Premium basmati rice & fresh chicken</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-biryani-cream/80">
+                                    <i class="fas fa-check-circle text-green-400"></i>
+                                    <span>Hand-ground secret spice blend</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-biryani-cream/80">
+                                    <i class="fas fa-check-circle text-green-400"></i>
+                                    <span>Slow-cooked for 2+ hours</span>
+                                </div>
+                            </div>
+
+                            <!-- Spice Level -->
+                            <div class="mb-6">
+                                <p class="text-sm text-biryani-yellow font-bold mb-2">Spice Level:</p>
+                                <div class="spice-level">
+                                    <div class="spice-dot active"></div>
+                                    <div class="spice-dot active"></div>
+                                    <div class="spice-dot active"></div>
+                                    <div class="spice-dot"></div>
+                                    <div class="spice-dot"></div>
+                                </div>
+                                <p class="text-xs text-biryani-cream/60 mt-1">Medium Spicy (Can be customized)</p>
+                            </div>
+
+                            <!-- Pricing -->
+                            <div class="border-t-2 border-biryani-orange/30 pt-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div>
+                                        <p class="text-sm text-biryani-cream/70">Regular (500g)</p>
+                                        <p class="text-3xl font-bold text-biryani-yellow">₹180</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-biryani-cream/70">Family Pack (1kg)</p>
+                                        <p class="text-3xl font-bold text-biryani-yellow">₹350</p>
+                                    </div>
+                                </div>
+
+                                <a href="order.html" class="block w-full funky-btn bg-biryani-orange hover:bg-biryani-yellow text-biryani-dark py-4 rounded-2xl font-bold text-lg text-center shadow-glow-orange">
+                                    <i class="fas fa-shopping-cart mr-2"></i>
+                                    Order Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brush-divider my-20"></div>
+
+            <!-- Add-ons Section -->
+            <div class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-biryani-yellow mb-4">
+                        🍗 Extra Add-ons
+                    </h2>
+                    <p class="text-lg text-biryani-cream/80">
+                        Make your meal even more special!
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Add-on 1: Extra Chicken -->
+                    <div class="card-lift bg-biryani-red/50 backdrop-blur-md rounded-3xl p-6 border-2 border-biryani-orange/30 shadow-xl">
+                        <div class="text-center mb-4">
+                            <div class="text-7xl mb-4">🍗</div>
+                            <h3 class="text-2xl font-bold text-biryani-yellow mb-2">Extra Chicken</h3>
+                            <p class="text-biryani-cream/80 text-sm mb-4">
+                                Double the protein! Extra tender chicken pieces marinated in our special blend.
+                            </p>
+                        </div>
+                        
+                        <div class="border-t-2 border-biryani-orange/30 pt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-biryani-cream/70">2 pieces</span>
+                                <span class="text-2xl font-bold text-biryani-orange">₹80</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add-on 2: Raitha -->
+                    <div class="card-lift bg-biryani-red/50 backdrop-blur-md rounded-3xl p-6 border-2 border-biryani-orange/30 shadow-xl">
+                        <div class="text-center mb-4">
+                            <div class="text-7xl mb-4">🥛</div>
+                            <h3 class="text-2xl font-bold text-biryani-yellow mb-2">Raitha</h3>
+                            <p class="text-biryani-cream/80 text-sm mb-4">
+                                Cool and refreshing cucumber raitha to complement your spicy biryani perfectly.
+                            </p>
+                        </div>
+                        
+                        <div class="border-t-2 border-biryani-orange/30 pt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-biryani-cream/70">200ml</span>
+                                <span class="text-2xl font-bold text-biryani-orange">₹40</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add-on 3: Salna -->
+                    <div class="card-lift bg-biryani-red/50 backdrop-blur-md rounded-3xl p-6 border-2 border-biryani-orange/30 shadow-xl">
+                        <div class="text-center mb-4">
+                            <div class="text-7xl mb-4">🍲</div>
+                            <h3 class="text-2xl font-bold text-biryani-yellow mb-2">Salna (Gravy)</h3>
+                            <p class="text-biryani-cream/80 text-sm mb-4">
+                                Rich and flavorful curry gravy that takes your biryani experience to the next level.
+                            </p>
+                        </div>
+                        
+                        <div class="border-t-2 border-biryani-orange/30 pt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-biryani-cream/70">150ml</span>
+                                <span class="text-2xl font-bold text-biryani-orange">₹50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brush-divider my-20"></div>
+
+            <!-- Combo Offers -->
+            <div>
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-biryani-yellow mb-4">
+                        🎁 Special Combo Offers
+                    </h2>
+                    <p class="text-lg text-biryani-cream/80">
+                        Save more with our combo deals!
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- Combo 1 -->
+                    <div class="card-lift bg-gradient-to-br from-biryani-orange/20 to-biryani-yellow/20 backdrop-blur-md rounded-3xl p-8 border-4 border-biryani-yellow/50 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold animate-pulse">
+                            SAVE ₹30
+                        </div>
+                        
+                        <h3 class="text-3xl font-bold text-biryani-yellow mb-4">Solo Feast</h3>
+                        <p class="text-biryani-cream/90 mb-6">
+                            Perfect for one person who wants it all!
+                        </p>
+
+                        <div class="space-y-2 mb-6 text-biryani-cream/80">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-400"></i>
+                                <span>Regular Biryani (500g)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-400"></i>
+                                <span>Raitha</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-400"></i>
+                                <span>Salna</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t-2 border-biryani-orange/30 pt-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <p class="text-sm text-biryani-cream/60 line-through">₹270</p>
+                                    <p class="text-4xl font-bold text-biryani-yellow">₹240</p>
+                                </div>
+                                <a href="order.html" class="funky-btn bg-biryani-orange hover:bg-biryani-yellow text-biryani-dark px-6 py-3 rounded-xl font-bold">
+                                    Order Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Combo 2 -->
+                    <div class="card-lift bg-gradient-to-br from-biryani-orange/20 to-biryani-yellow/20 backdrop-blur-md rounded-3xl p-8 border-4 border-biryani-yellow/50 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold animate-pulse">
+                            SAVE ₹60
+                        </div>
+                        
+                        <h3 class="text-3xl font-bold text-biryani-yellow mb-4">Family Pack</h3>
+                        <p class="text-biryani-cream/90 mb-6">
+                            Share the love with your family!
+                        </p>
+
+                        <div class="space-y-2 mb-6 text-biryani-cream/80">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-400"></i>
+                                <span>Family Pack Biryani (1kg)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-400"></i>
+                                <span>2x Extra Chicken</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-400"></i>
+                                <span>2x Raitha</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-400"></i>
+                                <span>Salna</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t-2 border-biryani-orange/30 pt-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <p class="text-sm text-biryani-cream/60 line-through">₹600</p>
+                                    <p class="text-4xl font-bold text-biryani-yellow">₹540</p>
+                                </div>
+                                <a href="order.html" class="funky-btn bg-biryani-orange hover:bg-biryani-yellow text-biryani-dark px-6 py-3 rounded-xl font-bold">
+                                    Order Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Notes -->
+    <section class="py-16 bg-gradient-to-b from-biryani-dark to-biryani-maroon">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-biryani-red/50 backdrop-blur-md rounded-3xl p-8 border-2 border-biryani-orange/30">
+                <h3 class="text-2xl font-bold text-biryani-yellow mb-6 flex items-center gap-3">
+                    <i class="fas fa-info-circle"></i>
+                    Important Information
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6 text-biryani-cream/90">
+                    <div class="flex gap-3">
+                        <i class="fas fa-calendar-alt text-biryani-orange text-xl"></i>
+                        <div>
+                            <p class="font-bold text-biryani-yellow">Ordering Window</p>
+                            <p class="text-sm">Monday to Friday (for Sunday delivery)</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fas fa-truck text-biryani-orange text-xl"></i>
+                        <div>
+                            <p class="font-bold text-biryani-yellow">Delivery Time</p>
+                            <p class="text-sm">Sunday: 12:00 PM - 2:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fas fa-box text-biryani-orange text-xl"></i>
+                        <div>
+                            <p class="font-bold text-biryani-yellow">Minimum Order</p>
+                            <p class="text-sm">1 Regular Pack (₹180)</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fas fa-fire text-biryani-orange text-xl"></i>
+                        <div>
+                            <p class="font-bold text-biryani-yellow">Spice Level</p>
+                            <p class="text-sm">Customizable (Mild/Medium/Hot)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-biryani-orange to-biryani-yellow">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-4xl md:text-5xl font-black text-biryani-dark mb-6">
+                Hungry Already? 😋
+            </h2>
+            <p class="text-xl text-biryani-dark/80 mb-8">
+                Don't wait! Pre-order your Sunday biryani now!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="order.html" class="funky-btn bg-biryani-dark hover:bg-biryani-maroon text-biryani-yellow px-10 py-4 rounded-full font-bold text-lg shadow-xl">
+                    <i class="fas fa-shopping-cart mr-2"></i>
+                    Place Your Order
+                </a>
+                <a href="https://wa.me/919876543210" target="_blank" class="funky-btn bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    Order via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-biryani-dark border-t-4 border-biryani-orange py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/img/logo.png" alt="Happy Sunday Biryani" class="h-12 w-12 object-contain">
+                        <div>
+                            <h3 class="text-xl font-heading text-biryani-yellow">Happy Sunday</h3>
+                            <p class="text-xs text-biryani-orange uppercase">Biryani</p>
+                        </div>
+                    </div>
+                    <p class="text-biryani-cream/70 text-sm">
+                        Namma Krishnagiri's authentic chicken biryani, delivered fresh every Sunday.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-biryani-yellow font-bold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-biryani-cream/70 hover:text-biryani-yellow transition">Home</a></li>
+                        <li><a href="about.html" class="text-biryani-cream/70 hover:text-biryani-yellow transition">About</a></li>
+                        <li><a href="menu.html" class="text-biryani-cream/70 hover:text-biryani-yellow transition">Menu</a></li>
+                        <li><a href="speciality.html" class="text-biryani-cream/70 hover:text-biryani-yellow transition">Speciality</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-biryani-yellow font-bold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-biryani-cream/70 text-sm">
+                        <li><i class="fas fa-map-marker-alt text-biryani-orange mr-2"></i> Krishnagiri</li>
+                        <li><i class="fas fa-phone text-biryani-orange mr-2"></i> +91 98765 43210</li>
+                        <li><i class="fab fa-whatsapp text-green-500 mr-2"></i> WhatsApp Orders</li>
+                        <li><i class="fas fa-clock text-biryani-orange mr-2"></i> Sun: 12 PM - 2 PM</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-biryani-yellow font-bold text-lg mb-4">Follow Us</h3>
+                    <div class="flex gap-4 mb-6">
+                        <a href="#" class="text-2xl text-biryani-cream hover:text-biryani-yellow transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-2xl text-biryani-cream hover:text-biryani-yellow transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-2xl text-biryani-cream hover:text-biryani-yellow transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <a href="admin.html" class="text-xs text-biryani-cream/50 hover:text-biryani-yellow transition">
+                        <i class="fas fa-lock mr-1"></i> Admin Login
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-biryani-orange/30 mt-8 pt-8 text-center">
+                <p class="text-biryani-cream/60 text-sm">
+                    &copy; 2025 Namma Krishnagiri Biryani. All rights reserved. Made with ❤️ for biryani lovers.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

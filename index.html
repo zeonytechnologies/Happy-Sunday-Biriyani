@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Sunday Biryani | Namma Krishnagiri Chicken Biryani</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'biryani-maroon': '#4A1515',
+                        'biryani-red': '#6B1D1D',
+                        'biryani-dark': '#2B0A0A',
+                        'biryani-orange': '#FF8C42',
+                        'biryani-yellow': '#FFD447',
+                        'biryani-cream': '#FFF8E7',
+                        'biryani-gold': '#F4A261',
+                        'biryani-green': '#2D5016',
+                    },
+                    fontFamily: {
+                        'funky': ['Fredoka', 'Poppins', 'sans-serif'],
+                        'heading': ['Berkshire Swash', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Funky Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+      .font-funky { font-family: 'Luckiest Guy', cursive; letter-spacing: 1px; }
+    </style>
+</head>
+<body class="bg-biryani-dark text-biryani-cream page-fade-in">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-biryani-maroon/95 backdrop-blur-md shadow-lg border-b-4 border-biryani-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 hover:opacity-90 transition">
+                    <img src="assets/img/logo.png" alt="Happy Sunday Biryani Logo" class="h-16 w-16 object-contain animate-bounce-slow">
+                    <div>
+                        <h1 class="text-2xl font-heading text-biryani-yellow">Happy Sunday</h1>
+                        <p class="text-xs text-biryani-orange uppercase tracking-wider">Biryani</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-biryani-cream hover:text-biryani-yellow transition font-semibold border-b-2 border-biryani-yellow">Home</a>
+                    <a href="about.html" class="text-biryani-cream hover:text-biryani-yellow transition font-semibold">About</a>
+                    <a href="menu.html" class="text-biryani-cream hover:text-biryani-yellow transition font-semibold">Menu</a>
+                    <a href="speciality.html" class="text-biryani-cream hover:text-biryani-yellow transition font-semibold">Speciality</a>
+                    <a href="contact.html" class="text-biryani-cream hover:text-biryani-yellow transition font-semibold">Contact</a>
+                    <a href="order.html" class="bg-biryani-orange hover:bg-biryani-yellow text-biryani-dark px-6 py-2 rounded-full font-bold transition transform hover:scale-105 shadow-glow-orange">
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-biryani-cream text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4 mobile-menu">
+                <a href="index.html" class="block py-2 text-biryani-yellow font-semibold">Home</a>
+                <a href="about.html" class="block py-2 text-biryani-cream hover:text-biryani-yellow">About</a>
+                <a href="menu.html" class="block py-2 text-biryani-cream hover:text-biryani-yellow">Menu</a>
+                <a href="speciality.html" class="block py-2 text-biryani-cream hover:text-biryani-yellow">Speciality</a>
+                <a href="contact.html" class="block py-2 text-biryani-cream hover:text-biryani-yellow">Contact</a>
+                <a href="order.html" class="block mt-2 bg-biryani-orange text-biryani-dark px-6 py-2 rounded-full font-bold text-center">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 bg-gradient-to-br from-biryani-maroon via-biryani-red to-biryani-dark texture-bg"></div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-10 text-6xl opacity-20 animate-float">🌶️</div>
+        <div class="absolute bottom-20 right-10 text-6xl opacity-20 animate-float" style="animation-delay: 1s;">🍚</div>
+        <div class="absolute top-40 right-20 text-5xl opacity-20 animate-float" style="animation-delay: 0.5s;">🧅</div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="text-center md:text-left space-y-6">
+                    
+                    <!-- Coming Soon Badge -->
+                    <div class="inline-block">
+                        <div class="bg-biryani-orange text-biryani-dark px-6 py-3 rounded-2xl font-bold text-lg shadow-glow-orange flex items-center gap-3 animate-bounce">
+                            <i class="fas fa-bullhorn text-2xl"></i>
+                            COMING SOON
+                        </div>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <div>
+                        <div class="relative inline-block">
+                            <h1 class="text-5xl md:text-7xl font-heading text-biryani-yellow mb-2 drop-shadow-lg font-funky">
+                                Happy Sunday
+                            </h1>
+                            <!-- Sun rays -->
+                            <div class="absolute -top-8 right-0 text-4xl animate-pulse">☀️</div>
+                        </div>
+                        <h2 class="text-6xl md:text-8xl font-black text-white drop-shadow-2xl font-funky" style="text-shadow: 4px 4px 0px #FF8C42;">
+                            BIRYANI
+                        </h2>
+                    </div>
+
+                    <!-- Tagline -->
+                    <div class="relative inline-block bg-biryani-green px-6 py-3 rounded-full -rotate-2 shadow-xl">
+                        <p class="text-xl md:text-2xl font-bold text-white">
+                            Freshly Cooked Every Sunday
+                        </p>
+                    </div>
+
+                    <!-- Location -->
+                    <p class="text-2xl font-semibold text-biryani-orange flex items-center justify-center md:justify-start gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        @ Namma Krishnagiri
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="https://wa.me/919876543210" target="_blank" class="funky-btn bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-3 shadow-xl whatsapp-pulse">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                            Order via WhatsApp
+                        </a>
+                        <a href="order.html" class="funky-btn bg-biryani-yellow hover:bg-biryani-orange text-biryani-dark px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-3 shadow-xl">
+                            <i class="fas fa-shopping-cart"></i>
+                            Pre-Order Now
+                        </a>
+                    </div>
+
+                    <!-- Delivery Info -->
+                    <div class="bg-biryani-dark/50 backdrop-blur-md rounded-2xl p-6 border-2 border-biryani-orange/30 shadow-2xl">
+                        <div class="flex items-start gap-4">
+                            <div class="text-4xl scooter-ride">🛵</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-biryani-yellow mb-2">
+                                    <i class="fas fa-motorcycle mr-2"></i>
+                                    Biryani Delivered on Sunday
+                                </h3>
+                                <p class="text-lg font-semibold text-biryani-orange">
+                                    12 PM to 2 PM
+                                </p>
+                                <p class="text-sm text-biryani-cream/80 mt-1">
+                                    📋 Order starts from: Monday to Friday
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Biryani Image with Animation -->
+                <div class="relative">
+                    <!-- Steam effects -->
+                    <div class="absolute top-0 left-1/4 w-full h-32 z-20">
+                        <div class="steam"></div>
+                        <div class="steam"></div>
+                        <div class="steam"></div>
+                    </div>
+
+                    <!-- Main Biryani Bowl -->
+                    <div class="relative animate-float">
+                        <div class="absolute inset-0 bg-biryani-orange/30 blur-3xl rounded-full"></div>
+                        <div class="relative bg-gradient-to-br from-biryani-orange/20 to-biryani-yellow/20 rounded-full p-8 backdrop-blur-sm border-4 border-biryani-yellow/50 shadow-2xl glow-hover">
+                            <!-- Brand Logo -->
+                            <div class="w-full aspect-square rounded-full flex items-center justify-center p-6">
+                                <img src="assets/img/logo.png" alt="Happy Sunday Biryani - Freshly Cooked Every Sunday" class="w-full h-full object-contain drop-shadow-2xl">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating ingredients -->
+                    <div class="absolute -top-5 -right-5 text-6xl animate-bounce" style="animation-delay: 0.2s;">🍗</div>
+                    <div class="absolute -bottom-5 -left-5 text-5xl animate-bounce" style="animation-delay: 0.4s;">🌶️</div>
+                </div>
+            </div>
+
+            <!-- Tagline Bottom -->
+            <div class="text-center mt-16">
+                <p class="text-2xl md:text-3xl font-bold text-biryani-cream">
+                    Straight to Your Doorstep 
+                    <span class="text-biryani-yellow">❤️</span>
+                </p>
+                <p class="text-lg text-biryani-orange mt-2">
+                    Indulge in a Feast Crafted to Ignite Your Taste Buds!
+                </p>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-biryani-yellow text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gradient-to-b from-biryani-dark to-biryani-maroon relative">
+        <div class="brush-divider"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-heading text-center text-biryani-yellow mb-12">
+                Why Choose Us?
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="card-lift bg-biryani-red/50 backdrop-blur-md rounded-3xl p-8 text-center border-2 border-biryani-orange/30 shadow-xl">
+                    <div class="text-6xl mb-4">🔥</div>
+                    <h3 class="text-2xl font-bold text-biryani-yellow mb-3">Authentic Dum Style</h3>
+                    <p class="text-biryani-cream/90">
+                        Traditional Krishnagiri-style cooking method with hand-ground spices and slow-cooked perfection.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="card-lift bg-biryani-red/50 backdrop-blur-md rounded-3xl p-8 text-center border-2 border-biryani-orange/30 shadow-xl">
+                    <div class="text-6xl mb-4">✨</div>
+                    <h3 class="text-2xl font-bold text-biryani-yellow mb-3">Fresh Every Sunday</h3>
+                    <p class="text-biryani-cream/90">
+                        Limited batches, prepared fresh on Sundays only. Pre-order to guarantee your portion!
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="card-lift bg-biryani-red/50 backdrop-blur-md rounded-3xl p-8 text-center border-2 border-biryani-orange/30 shadow-xl">
+                    <div class="text-6xl mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold text-biryani-yellow mb-3">Hot & Fast Delivery</h3>
+                    <p class="text-biryani-cream/90">
+                        Delivered straight to your doorstep between 12 PM - 2 PM every Sunday!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Order Section -->
+    <section class="py-20 bg-biryani-maroon">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-heading text-center text-biryani-yellow mb-16">
+                How to Order?
+            </h2>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center scroll-reveal">
+                    <div class="bg-biryani-orange text-biryani-dark w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-glow-orange">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-biryani-yellow mb-2">Choose Your Biryani</h3>
+                    <p class="text-biryani-cream/80">Browse our menu and select your favorite</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="bg-biryani-orange text-biryani-dark w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-glow-orange">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-biryani-yellow mb-2">Place Your Order</h3>
+                    <p class="text-biryani-cream/80">Order via WhatsApp or our website</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center scroll-reveal" style="animation-delay: 0.4s;">
+                    <div class="bg-biryani-orange text-biryani-dark w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-glow-orange">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-biryani-yellow mb-2">We Cook Fresh</h3>
+                    <p class="text-biryani-cream/80">Your biryani is prepared on Sunday morning</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center scroll-reveal" style="animation-delay: 0.6s;">
+                    <div class="bg-biryani-orange text-biryani-dark w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-glow-orange">
+                        4
+                    </div>
+                    <h3 class="text-xl font-bold text-biryani-yellow mb-2">Hot Delivery</h3>
+                    <p class="text-biryani-cream/80">Delivered fresh to your doorstep!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-biryani-orange to-biryani-yellow relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="text-9xl absolute top-10 left-10">🍛</div>
+            <div class="text-9xl absolute bottom-10 right-10">🍗</div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-4xl md:text-6xl font-black text-biryani-dark mb-6">
+                Ready to Experience the Best Biryani?
+            </h2>
+            <p class="text-xl text-biryani-dark/80 mb-8">
+                Don't miss out on this Sunday's special batch!
+            </p>
+            <a href="order.html" class="inline-block funky-btn bg-biryani-dark hover:bg-biryani-maroon text-biryani-yellow px-12 py-5 rounded-full font-bold text-xl shadow-2xl transform hover:scale-105 transition">
+                <i class="fas fa-fire mr-2"></i>
+                Order Your Sunday Biryani Now!
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-biryani-dark border-t-4 border-biryani-orange py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/img/logo.png" alt="Happy Sunday Biryani" class="h-12 w-12 object-contain">
+                        <div>
+                            <h3 class="text-xl font-heading text-biryani-yellow">Happy Sunday</h3>
+                            <p class="text-xs text-biryani-orange uppercase">Biryani</p>
+                        </div>
+                    </div>
+                    <p class="text-biryani-cream/70 text-sm">
+                        Namma Krishnagiri's authentic chicken biryani, delivered fresh every Sunday.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-biryani-yellow font-bold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-biryani-cream/70 hover:text-biryani-yellow transition">Home</a></li>
+                        <li><a href="about.html" class="text-biryani-cream/70 hover:text-biryani-yellow transition">About</a></li>
+                        <li><a href="menu.html" class="text-biryani-cream/70 hover:text-biryani-yellow transition">Menu</a></li>
+                        <li><a href="speciality.html" class="text-biryani-cream/70 hover:text-biryani-yellow transition">Speciality</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-biryani-yellow font-bold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-biryani-cream/70 text-sm">
+                        <li><i class="fas fa-map-marker-alt text-biryani-orange mr-2"></i> Krishnagiri</li>
+                        <li><i class="fas fa-phone text-biryani-orange mr-2"></i> +91 98765 43210</li>
+                        <li><i class="fab fa-whatsapp text-green-500 mr-2"></i> WhatsApp Orders</li>
+                        <li><i class="fas fa-clock text-biryani-orange mr-2"></i> Sun: 12 PM - 2 PM</li>
+                    </ul>
+                </div>
+
+                <!-- Social & Admin -->
+                <div>
+                    <h3 class="text-biryani-yellow font-bold text-lg mb-4">Follow Us</h3>
+                    <div class="flex gap-4 mb-6">
+                        <a href="#" class="text-2xl text-biryani-cream hover:text-biryani-yellow transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-2xl text-biryani-cream hover:text-biryani-yellow transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-2xl text-biryani-cream hover:text-biryani-yellow transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <a href="admin.html" class="text-xs text-biryani-cream/50 hover:text-biryani-yellow transition">
+                        <i class="fas fa-lock mr-1"></i> Admin Login
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-biryani-orange/30 mt-8 pt-8 text-center">
+                <p class="text-biryani-cream/60 text-sm">
+                    &copy; 2025 Namma Krishnagiri Biryani. All rights reserved. Made with ❤️ for biryani lovers.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
